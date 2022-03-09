@@ -1,3 +1,14 @@
+/**
+ * @file Test.cpp
+ * @author elad sezanayev (you@domain.com)
+ * @brief This file is testing the mat.cpp file (the mat function)
+ * @version 0.1
+ * @date 2022-03-09
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 
 #include "doctest.h"
 #include "mat.hpp"
@@ -21,6 +32,7 @@ string nospaces(string input) {
 
 
 TEST_CASE("Good input") {
+    // checking good carpet inputs and there outputs 
 	CHECK(nospaces(mat(9, 7, '@', '-')) == nospaces("@@@@@@@@@\n"
 													 "@-------@\n"
 													 "@-@@@@@-@\n"
@@ -52,7 +64,7 @@ TEST_CASE("Good input") {
 }
 
 TEST_CASE("Bad input") {
-    // invalid rows&colunms numbers inputs
+    // invalid rows&colunms numbers inputs, negetive and even numbers 
     CHECK_THROWS(mat(10, 5, '$', '%'));
     CHECK_THROWS(mat(-5, 5, '$', '%'));
     CHECK_THROWS(mat(2, 2, 'w', 'D'));
@@ -78,5 +90,3 @@ TEST_CASE("Bad input") {
     
 }
 
-
-/* Add more test cases here */
